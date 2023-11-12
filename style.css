@@ -12,7 +12,10 @@
   -webkit-box-align: center;
   align-items: center;
 }
-
+.uploader__input {
+  width: 0px;
+  visibility: hidden;
+}
 footer {
   position: fixed;
   bottom: 0;
