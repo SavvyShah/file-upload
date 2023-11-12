@@ -17,20 +17,24 @@
     <div id="app">
       <div>
         <h1 class="heading">File Upload</h1>
+        <!-- <Uploader> -->
         <div class="uploader">
           <input type="file" class="uploader__input" id="uploader__input" />
           <button class="uploader__button" id="uploader__button">
             Upload file
           </button>
-          <div
-            class="uploader__drop-area-container"
-            id="uploader__drop-area-container"
-          >
-            <div class="uploader__drop-area" id="uploader__drop-area">
-              Drop your files here
+          <div class="uploader__drop-area" id="uploader__drop-area">
+            <!-- <DropComponent> Because I didn't want to uploader__drop-area__placeholder -->
+            <div class="drop-area" id="drop-area">
+              <div class="drop-area__placeholder" id="drop-area__placeholder">
+                Drop your file
+              </div>
             </div>
+            <!-- </DropComponent> -->
           </div>
+          <div class="uploader__overlay" id="uploader__overlay"></div>
         </div>
+        <!-- </Uploader> -->
       </div>
       <footer>Made by <a href="http://savvyshah.com">@SavvyShah</a></footer>
     </div>
