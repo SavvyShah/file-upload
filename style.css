@@ -1,5 +1,6 @@
 :root {
   --primary-color: royalblue;
+  --primary-text: white;
   --link-color: #007bff;
 }
 .heading {
@@ -14,7 +15,17 @@
 }
 .uploader__input {
   width: 0px;
-  visibility: hidden;
+}
+.uploader__input:focus + .uploader__btn {
+  outline: 5px solid cornflowerblue;
+}
+.uploader__btn {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+  font-family: sans-serif;
 }
 footer {
   position: fixed;
