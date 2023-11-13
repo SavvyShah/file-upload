@@ -52,6 +52,14 @@
   display: block;
   z-index: 11;
 }
+.uploader__file-item {
+  display: flex;
+  margin: 1rem;
+  font-family: sans-serif;
+}
+.uploader__file-icon {
+  margin-right: 0.5rem;
+}
 .drop-area {
   background-color: var(--primary-color);
   opacity: 0.75;
