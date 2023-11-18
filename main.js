@@ -3,7 +3,6 @@ const uploader = document.getElementById("uploader");
 const button = document.getElementById("uploader__button");
 const fileInput = document.getElementById("uploader__input");
 const dropArea = document.getElementById("uploader__drop-area");
-const overlay = document.getElementById("uploader__overlay");
 
 // Add event listener
 button.addEventListener("click", () => {
@@ -24,16 +23,14 @@ document.addEventListener("dragenter", (e) => {
   // We don't where the drag object came from, so it would be from outside the window
   if (!sourceElement) {
     dropArea.classList.add("uploader__drop-area--active");
-    overlay.classList.add("uploader__overlay--active");
   }
 });
-overlay.addEventListener("dragleave", (e) => {
+document.addEventListener("dragleave", (e) => {
   e.preventDefault();
-  const destinationElement = e.fromElement || e.relatedTarget;
+  const destinationElement = e.relatedTarget;
   // We don't know where the drag object is going, so it would be outside the window
   if (!destinationElement) {
     dropArea.classList.remove("uploader__drop-area--active");
-    overlay.classList.remove("uploader__overlay--active");
   }
 });
 
@@ -45,10 +42,7 @@ dropArea.addEventListener("drop", (e) => {
   Object.values(e.dataTransfer.files).forEach((file) => {
     addFileToView(file);
   });
-
-  // Drop is complete so restore the styles
   dropArea.classList.remove("uploader__drop-area--active");
-  overlay.classList.remove("uploader__overlay--active");
 });
 
 function removePreviousFiles() {
